@@ -48,9 +48,9 @@ constraints = [
   "- 入門者がわかるような易しいコメントをつけてください。",
   #"- pythonのバージョンは3.10です。",
   #"- 既に記載されているものは追加で記載する必要はありません。"
-  "- 各変数がどのようなものなのかコメントしてください",
-  "- これを教材として、pythonの各データ形式やインスタンスやクラスを解説してください",
-  "- コメントは日本語で書いてください"
+  "- 各変数がどのようなものなのかコメントしてください。",
+  "- これを教材として、pythonの各データ形式やインスタンスやクラスを解説してください。",
+  "- コメントは日本語で書いてください。"
   ]
 
 dataset_explanation = """データの取得部分は次のコードを使用してください
@@ -78,7 +78,7 @@ data = pd.read_csv(filename, index_col=None, dtype=dtypes, encoding='utf-8')
 ```python
 
 # 指示
-instruction = """変数dataのsold_todayカラムを予測するlogistic回帰モデルのpythonコードを提供してください"""
+instruction = """変数dataのsold_todayカラムを予測するlogistic回帰モデルのpythonコードを提供してください。"""
 # プロンプトを構成
 prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
 #prompt = prompt+"\n\n"+dataset_explanation # colaboratory以外の生成AIを利用する場合は行頭の#をはずし、有効にする
@@ -89,7 +89,7 @@ print(prompt)
   
 （変数constraintsとdataset_explanationは共通です。）
 ```python
-instruction = """dataのsold_todayカラムを予測するLightGBM分類モデルのpythonコードを提供してください"""
+instruction = """dataのsold_todayカラムを予測するLightGBM分類モデルのpythonコードを提供してください。"""
 
 prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
 #prompt = prompt+"\n\n"+dataset_explanation # colaboratory以外の生成AIを利用する場合は行頭の#をはずし、有効にする
@@ -109,7 +109,7 @@ print(prompt)
   
 #### 4.2 機械学習アウトプットの使い方と解釈(2) 分位点回帰による区間予測
 ```python
-prompt = """変数dataのsale_countカラムを分位点回帰により予測するpythonコードを提供してください"""
+prompt = """変数dataのsale_countカラムを分位点回帰により予測するpythonコードを提供してください。"""
 prompt = role + "\n\n" + prompt + "\n\n" + "\n".join(constraints)
 print(prompt)
 ```
@@ -117,7 +117,7 @@ print(prompt)
   
 #### 4.2 機械学習アウトプットの使い方と解釈(3) ngboostによる分布予測
 ```python
-prompt = """変数dataのsale_countカラムをngboostにより分布予測するpythonコードを提供してください"""
+prompt = """変数dataのsale_countカラムをngboostにより分布予測するpythonコードを提供してください。"""
 prompt = role + "\n\n" + prompt + "\n\n" + "\n".join(constraints)+"\n\n"#+cot
 print(prompt)
 ```
