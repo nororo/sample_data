@@ -91,11 +91,25 @@ print(prompt)
 ```
 
 
-#### 4.2 機械学習アウトプットの使い方と解釈(3) SHAPによる機械学習モデルの説明
+#### 4.2 機械学習アウトプットの使い方と解釈(1) SHAPによる機械学習モデルの説明
 ```python
 instruction = """LightGBM分類モデルの出力の説明をSHAPで行うpythonコードを提供してください。サンプルを例にSHAP値のウォーターフォール図を作成してください"""
 
 prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
 #prompt = prompt+"\n\n"+dataset_explanation # colaboratory以外の生成AIを利用する場合は行頭の#をはずし、有効にする
+print(prompt)
+```
+
+#### 4.2 機械学習アウトプットの使い方と解釈(2) 分位点回帰による区間予測
+```python
+prompt = """変数dataのsale_countカラムを分位点回帰により予測するpythonコードを提供してください"""
+prompt = role + "\n\n" + prompt + "\n\n" + "\n".join(constraints)
+print(prompt)
+```
+
+#### 4.2 機械学習アウトプットの使い方と解釈(3) ngboostによる分布予測
+```python
+prompt = """変数dataのsale_countカラムをngboostにより分布予測するpythonコードを提供してください"""
+prompt = role + "\n\n" + prompt + "\n\n" + "\n".join(constraints)+"\n\n"#+cot
 print(prompt)
 ```
