@@ -73,7 +73,7 @@ data = pd.read_csv(filename, index_col=None, dtype=dtypes, encoding='utf-8')
 # 指示
 instruction = """変数dataのsold_todayカラムを予測するlogistic回帰モデルのpythonコードを提供してください"""
 
-
+# プロンプトを構成
 prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
 #prompt = prompt+"\n\n"+dataset_explanation # colaboratory以外の生成AIを利用する場合は行頭の#をはずし、有効にする
 print(prompt)
@@ -84,6 +84,7 @@ print(prompt)
 変数constraintsとdataset_explanationは共通です。
 ```python
 instruction = """dataのsold_todayカラムを予測するLightGBM分類モデルのpythonコードを提供してください"""
+
 prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
 #prompt = prompt+"\n\n"+dataset_explanation # colaboratory以外の生成AIを利用する場合は行頭の#をはずし、有効にする
 print(prompt)
@@ -91,8 +92,9 @@ print(prompt)
 
 
 #### 4.2 機械学習アウトプットの使い方と解釈(3) SHAPによる機械学習モデルの説明
-```
+```python
 instruction = """LightGBM分類モデルの出力の説明をSHAPで行うpythonコードを提供してください。サンプルを例にSHAP値のウォーターフォール図を作成してください"""
+
 prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
 #prompt = prompt+"\n\n"+dataset_explanation # colaboratory以外の生成AIを利用する場合は行頭の#をはずし、有効にする
 print(prompt)
