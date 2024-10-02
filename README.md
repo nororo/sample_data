@@ -97,6 +97,17 @@ prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
 print(prompt)
 ```
   
+#### 4.1 機械学習を実践しよう(3) LightGBM分類モデルによる販売or在庫の予測 予測対象データへの予測
+```python
+instruction = """LightGBM分類モデルで5月1日の商品データの予測を行なってください。
+5月1日のデータは"/content/sample_data_pads/dataset/store_dataset_0501.csv"です。
+5月1日のデータには'sold_today'カラムがないことに注意してください。
+"""
+prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
+#prompt = prompt+"\n\n"+dataset_explanation # colaboratory以外の生成AIを利用する場合は行頭の#をはずし、有効にする
+print(prompt)
+```
+  
   
 #### 4.2 機械学習アウトプットの使い方と解釈(1) SHAPによる機械学習モデルの説明
 ```python
