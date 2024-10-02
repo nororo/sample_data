@@ -12,12 +12,12 @@
 ### ※Google colaboratolyでは、”AI で生成”機能を有効にすると有効にしたGoogleアカウントではノートブックのデータをモデルの学習に追加されてしまうため、秘密情報や個人情報は書かないでください。
 
 
-### プロンプトテンプレート
+### プロンプトテンプレートについて
 
 pythonの変数でプロンプトテキストを作っています。
 
 1. role: 役割を記載したテキスト
-2. prompt: 指示内容を記載したテキスト（ここを編集）
+2. instruction: 指示内容を記載したテキスト（ここを編集）
 3. constraints: 注意事項を記載したテキスト（リスト変数。行頭に#をつけることで、その行のテキストを無効化できます。）
 4. dataset_explanation: データに関する説明のテキスト（colaboratory以外の生成AIを利用する場合はこれも含める）
 
@@ -25,7 +25,7 @@ pythonの変数でプロンプトテキストを作っています。
 
 ```python
 roleのテキスト
-promptのテキスト
+instructionのテキスト
 [constraints]リストの要素のテキスト（"\n".join(constraints)はリストの要素を改行でつなげています。）
 (dataset_explanation)データ説明のテキスト
 ```
@@ -33,7 +33,8 @@ promptのテキスト
 
 
 
-#### プロンプト作成pythonコード
+### プロンプト作成pythonコード
+#### 4.1 機械学習を実践しよう(1) ロジスティック回帰モデルによる販売or在庫の予測 
 ```python
 # テンプレート部分
 role = "あなたは入門者向けpythonプログラミング学習の補助アシスタントです。"
@@ -70,10 +71,29 @@ dtypes = {
 data = pd.read_csv(filename, index_col=None, dtype=dtypes, encoding='utf-8')
 ```"""
 # 指示
-prompt = """変数dataのsold_todayカラムを予測するlogistic回帰モデルのpythonコードを提供してください"""
+instruction = """変数dataのsold_todayカラムを予測するlogistic回帰モデルのpythonコードを提供してください"""
 
 
-prompt = role + "\n\n" + prompt + "\n\n" + "\n".join(constraints)
+prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
+#prompt = prompt+"\n\n"+dataset_explanation # colaboratory以外の生成AIを利用する場合は行頭の#をはずし、有効にする
+print(prompt)
+```
+
+
+#### 4.1 機械学習を実践しよう(2) LightGBM分類モデルによる販売or在庫の予測
+変数constraintsとdataset_explanationは共通です。
+```python
+instruction = """dataのsold_todayカラムを予測するLightGBM分類モデルのpythonコードを提供してください"""
+prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
+#prompt = prompt+"\n\n"+dataset_explanation # colaboratory以外の生成AIを利用する場合は行頭の#をはずし、有効にする
+print(prompt)
+```
+
+
+#### 4.2 機械学習アウトプットの使い方と解釈(3) SHAPによる機械学習モデルの説明
+```
+instruction = """LightGBM分類モデルの出力の説明をSHAPで行うpythonコードを提供してください。サンプルを例にSHAP値のウォーターフォール図を作成してください"""
+prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
 #prompt = prompt+"\n\n"+dataset_explanation # colaboratory以外の生成AIを利用する場合は行頭の#をはずし、有効にする
 print(prompt)
 ```
