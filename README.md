@@ -57,10 +57,11 @@ dataset_explanation = """データの取得部分は次のコードを使用し�
 ```python
 filename = "/content/sample_data_pads/dataset/store_dataset.csv"
 dtypes = {
+    'prod_id_unique':str, # index(商品番号) (棚に並んでいる商品ひとつひとつを区別 ex A_1_20240401, A_2_20240401, ...)
+
     'sold_today':bool,# 目的変数
 
     'date':str, #仕入日付 YYYY-MM-DD
-    'prod_id_unique':str, # 商品番号 (棚に並んでいる商品ひとつひとつを区別 ex A_1_20240401, A_2_20240401, ...)
     'product_name':str, # 商品名 {A,B,C,D<E}
     'expiry_date':str, # 消費期限 YYYY-MM-DD
     'product_type':str, # 商品タイプ {チョコ,ピザ,食パン,クロワッサン}
