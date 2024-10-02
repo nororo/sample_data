@@ -16,20 +16,17 @@
 
 pythonの変数でプロンプトテキストを作っています。
 
-role: 役割を記載したテキスト
-
-prompt: 指示内容を記載したテキスト（ここを編集）
-
-constraints: 注意事項を記載したテキスト（リスト変数。行頭に#をつけることで、その行のテキストを無効化できます。）
-
-dataset_explanation: データに関する説明のテキスト（colaboratory以外の生成AIを利用する場合はこれも含める）
+1. role: 役割を記載したテキスト
+2. prompt: 指示内容を記載したテキスト（ここを編集）
+3. constraints: 注意事項を記載したテキスト（リスト変数。行頭に#をつけることで、その行のテキストを無効化できます。）
+4. dataset_explanation: データに関する説明のテキスト（colaboratory以外の生成AIを利用する場合はこれも含める）
 
 これらを改行（改行2つ"\n\n"）でつなげることでプロンプトを完成させます。これをprint()関数で出力し、コピー&ペーストで使用します。
 
-```prompt
+```python
 roleのテキスト
 promptのテキスト
-[constraints]リストの要素のテキスト
+[constraints]リストの要素のテキスト（"\n".join(constraints)はリストの要素を改行でつなげています。）
 (dataset_explanation)データ説明のテキスト
 ```
 
