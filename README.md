@@ -26,14 +26,12 @@ dataset_explanation: データに関する説明のテキスト（colaboratory�
 
 これらを改行（改行2つ"\n\n"）でつなげることでプロンプトを完成させます。これをprint()関数で出力し、コピー&ペーストで使用します。
 
+```prompt
 roleのテキスト
-
 promptのテキスト
-
 [constraints]リストの要素のテキスト
-
 (dataset_explanation)データ説明のテキスト
-
+```
 
 
 
