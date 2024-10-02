@@ -63,7 +63,7 @@ dtypes = {
 
     'date':str, #仕入日付 YYYY-MM-DD
     'product_name':str, # 商品名 {A,B,C,D<E}
-    'expiry_date':str, # 消費期限 YYYY-MM-DD
+    'expiry_date':str, # 消費期限 YYYY-MM-DD （仕入日付との差分に意味があります）
     'product_type':str, # 商品タイプ {チョコ,ピザ,食パン,クロワッサン}
     'price':str, # 価格 100〜250
     'weekday':str, # 曜日 {月, 火, 水, 木, 金, 土, 日}
