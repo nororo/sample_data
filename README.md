@@ -121,15 +121,15 @@ print(prompt)
   
 #### 4.2 機械学習アウトプットの使い方と解釈(2) 分位点回帰による区間予測
 ```python
-prompt = """変数dataのsale_countカラムを分位点回帰により予測するpythonコードを提供してください。"""
-prompt = role + "\n\n" + prompt + "\n\n" + "\n".join(constraints)
+instruction = """変数dataのsale_countカラムを分位点回帰により予測するpythonコードを提供してください。"""
+prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)
 print(prompt)
 ```
   
   
 #### 4.2 機械学習アウトプットの使い方と解釈(3) ngboostによる分布予測
 ```python
-prompt = """変数dataのsale_countカラムをngboostにより分布予測するpythonコードを提供してください。"""
-prompt = role + "\n\n" + prompt + "\n\n" + "\n".join(constraints)+"\n\n"#+cot
+instruction = """変数dataのsale_countカラムをngboostにより分布予測するpythonコードを提供してください。"""
+prompt = role + "\n\n" + instruction + "\n\n" + "\n".join(constraints)+"\n\n"#+cot
 print(prompt)
 ```
